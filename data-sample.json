@@ -1,0 +1,97 @@
+{
+    "id": 1,
+    "version": "1.0.0",
+    "project": "Teste de teste",
+    "goal": "",
+    "sprints": [
+        {
+            "id": 1,
+            "sequence": 1,
+            "goals": ["Goal 1", "Goal 2", "Goal 3"],
+            "startDate": "2024-06-24",
+            "endData": "2024-07-05",
+            "size": 10,
+            "userStoriesId": [1],
+            "daily": [
+                {
+                    "day": 1,
+                    "remainingWork": 292,
+                    "notes": ["No impediments"]
+                }
+            ]
+        }
+    ],
+    "team": [
+        {
+            "id": 1,
+            "name": "DEV 1",
+            "availability": [8, 8, 8, 8, 8, 8, 8, 8, 8, 8],
+            "worked": [8, 8],
+            "hourRate": 115,
+            "position": "developer"
+        },
+        {
+            "id": 2,
+            "name": "DEV 2",
+            "availability": [8, 8, 8, 8, 8, 8, 8, 8, 8, 8],
+            "worked": [8, 8],
+            "hourRate": 85,
+            "position": "developer"
+        },
+        {
+            "id": 3,
+            "name": "DEV 3",
+            "availability": [8, 8, 8, 8, 8, 8, 8, 8, 8, 8],
+            "worked": [8, 8],
+            "hourRate": 135,
+            "position": "developer"
+        },
+        {
+            "id": 4,
+            "name": "DEV 4",
+            "availability": [8, 8, 8, 8, 8, 8, 8, 8, 8, 8],
+            "worked": [8, 8],
+            "hourRate": 135,
+            "position": "developer"
+        },
+        {
+            "id": 5,
+            "name": "DEV 5",
+            "availability": [8, 8, 8, 8, 8, 8, 8, 8, 8, 8],
+            "worked": [8, 8],
+            "hourRate": 135,
+            "position": "developer"
+        }
+    ],
+    "userStories": [
+        {
+            "id": 1,
+            "parentId": null,
+            "type": "userStory",
+            "priority": 0,
+            "story": "Me as customer want to buy a book so that I can gift a friend",
+            "acceptanceCriteria": "The book should be ordered successful",
+            "estimation": {
+                "interaction": 3,
+                "businessRules": 2,
+                "entities": 1,
+                "dataHandling": 3
+            },
+            "startDate": "2024-06-24",
+            "endDate": "",
+            "status": "working",
+            "workedHours": 4,
+            "estimatedHours": 16
+        }
+    ],
+    "kanban": ["Product Backlog", "Sprint Backlog", "Working", "Validation", "Done"],
+    "definitionOfReady": [],
+    "definitionOfDone": [],
+    "releases": [
+        {
+            "id": 1,
+            "name": "Release 1",
+            "userStoriesId": [1]
+        }
+    ]
+}

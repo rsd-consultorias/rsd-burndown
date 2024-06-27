@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    font-family: sans-serif;
+    font-weight: light;
+}
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

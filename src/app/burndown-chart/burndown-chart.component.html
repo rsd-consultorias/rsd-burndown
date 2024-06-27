@@ -1,0 +1,119 @@
+<div class="container-fluid fw-light">
+    <div class="row b-0 p-3">
+        <div class="col-1 b-0 p-0 m-0">
+            <div
+                style="padding: 8px; width: 100%; display: inline-block; background: #46A921; color: white; text-align: center;">
+                <div>SPRINT</div>
+                <div style="font-size: 68px;">{{data!.sprints[currentSprint].sequence}}</div>
+            </div>
+        </div>
+        <div class="col-1 b-0 p-0 m-0">
+            <div
+                style="padding: 8px; width: 100%; display: inline-block; background: #46A921; color: white; text-align: center;">
+                <div>DIA</div>
+                <div style="font-size: 68px;">{{data!.sprints[currentSprint].daily.length}}</div>
+            </div>
+        </div>
+        <div class="col b-0 p-0 m-0"></div>
+        <div class="col-4 b-0 p-0 m-0">
+            <div class="row text-center fw-bold"
+                style="align-items: center; text-align: center; border-bottom: 1px solid black;">
+                <div>Pontos</div>
+            </div>
+            <div class="row">
+                <div class="col b-0 p-0 m-0">
+                    <div style="padding: 8px; width: 100%; display: inline-block; text-align: center;">
+                        <div>Estimados</div>
+                        <div style="font-size: 60px; margin: auto;">{{totalPontos | number: '1.0-0'}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col b-0 p-0 m-0">
+                    <div style="padding: 8px; width: 100%; display: inline-block; text-align: center;">
+                        <div>Remanescentes</div>
+                        <div style="font-size: 60px; margin: auto;">{{pontosProduzidos[indiceUltimoPontoProduzido] |
+                            number:
+                            '1.0-0'}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col b-0 p-0 m-0">
+                    <div style="padding: 8px; width: 100%; display: inline-block; text-align: center;">
+                        <div>Produzidos</div>
+                        <div style="font-size: 60px; margin: auto;">{{totalPontos -
+                            pontosProduzidos[indiceUltimoPontoProduzido]
+                            | number: '1.0-0'}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col b-0 p-0 m-0"></div>
+        <div class="col-3 b-0 p-0 m-0">
+            <table class="table">
+                <tr>
+                    <td class="fw-medium">Velocidade Atual:</td>
+                    <td>{{velocidadeEstimada | number: '1.0-0'}} pontos/dia</td>
+                </tr>
+                <tr>
+                    <td class="fw-medium">Velocidade Necessária:</td>
+                    <td>{{totalPontos / (burndown!.sprint.tamanhoDias - 1) | number: '1.0-0'}} pontos/dia</td>
+                </tr>
+                <tr>
+                    <td class="fw-medium">Velocidade Média:</td>
+                    <td>{{velocidadeMedia | number: '1.0-0'}} pontos/dia</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <canvas id="canvas" style="max-height: 400px;">{{burndownChart}}</canvas>
+    </div>
+    <div class="row pt-4">
+        <div class="col-9">
+            <table class="table">
+                <thead>
+                    <th>História</th>
+                    <th>Pontos</th>
+                    <th></th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let historia of data!.userStories">
+                        <td>{{historia.story}}</td>
+                        <td>{{historia.estimation.calculatedPoints}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <div class="col">
+                <div class="row">
+                    <div class="col fw-semibold">Pontos por Hora:</div>
+                    <div class="col">{{burndown!.sprint.pontosPorHora | number: '1.1-1'}} pontos/h</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="col fw-semibold">Tamanho do Time:</div>
+                    <div class="col">{{burndown!.sprint.membros}} membros</div>
+                </div>
+                <div class="row">
+                    <div class="col fw-semibold">Tamanho da Sprint:</div>
+                    <div class="col">{{burndown!.sprint.tamanhoDias}} dias</div>
+                </div>
+                <div class="row">
+                    <div class="col fw-semibold">Total de Pontos:</div>
+                    <div class="col">{{totalPontos}} pontos</div>
+                </div>
+                <div class="row">
+                    <div class="col fw-semibold">Capacidade:</div>
+                    <div class="col">{{burndown!.sprint.membros * burndown!.sprint.horasDevDia *
+                        burndown!.sprint.tamanhoDias}} h</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
