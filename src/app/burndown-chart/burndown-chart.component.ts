@@ -190,11 +190,11 @@ export class BurndownChartComponent {
               "remainingWork": 185.2,
               "notes": ["No impediments"]
             },
-            // {
-            //   "day": 4,
-            //   "remainingWork": 155.2,
-            //   "notes": ["No impediments"]
-            // }
+            {
+              "day": 4,
+              "remainingWork": 161.2,
+              "notes": ["No impediments"]
+            }
           ]
         }
       ],
@@ -203,7 +203,7 @@ export class BurndownChartComponent {
           "id": 1,
           "name": "DEV 1",
           "availability": [0, 8, 8, 8, 8, 8, 8, 8, 8, 8],
-          "worked": [8, 8, 0],
+          "worked": [8, 8, 40],
           "hourRate": 115,
           "position": "developer"
         },
